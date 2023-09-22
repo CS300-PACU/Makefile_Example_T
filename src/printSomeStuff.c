@@ -8,6 +8,7 @@
  ****************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
+#include "../include/printFunc.h"
 
  /****************************************************************************
   Function:			main
@@ -20,6 +21,11 @@
   Returned:	 		EXIT_SUCCESS
   ****************************************************************************/
 int main (int argc, char* argv[]) {
-  printf ("HELLO CS STUDENT!\n\n");
+
+	printCapLetters();
+	printf("\n");
+	printLowerLetters();
+	printf("\n");
+	
   return EXIT_SUCCESS;
 }
