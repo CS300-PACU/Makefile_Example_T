@@ -7,26 +7,40 @@
 # Purpose:    demonstrate the components of a Makefile
 #############################################################################
 
-# VARIABLES
+# Set some variables that make our life easier
 
+# Compiler
 CC=gcc
 
+# Flags for the compiler
 CFLAGS=-g -Wall
+
+# -g  include debug symbols in the executable so that the code can be
+# 		run through the debugger effectively
+#
+# -Wall	show many warnings from gcc
+
+# Options for VALGRIND
+# NOTE: the following line is broken across two lines
+# the slash (\) at the end is the continuation character
+# the slash must not be followed by any character except a newline!
 VALGRIND_FLAGS=-v --leak-check=yes --track-origins=yes --leak-check=full\
  --show-leak-kinds=all
+
+# Options for ENSCRIPT
 ENSCRIPT_FLAGS=-C -T 2 -p - -M Letter -Ec --color -fCourier8
 
 .PHONY: clean
 
-TARGETS=bin/main
+# TARGETS is used below to hold the name of all the executables
+# built by this Makefile.  This allows us to add the executable name
+# in one place and have both all and clean updated. 
 
-# RULES
-#
-# TARGET: DEPENDENCIES
-# <tab>COMMAND
+TARGETS=bin/main
 
 all: bin ${TARGETS}
 
+# Make the bin directory if it does not exist
 bin:
 	mkdir -p bin
 
@@ -36,6 +50,7 @@ bin/main: bin/main.o
 bin/main.o: src/main.c
 	${CC}  -o bin/main.o -c src/main.c ${CFLAGS}
 
+# remove all the GENERATED files
 clean:
 	rm -rf bin/*.o ${TARGETS} bin/*.pdf
 
