@@ -1,14 +1,18 @@
 #############################################################################
 # File name:  Makefile
 # Author:     chadd williams
-# Date:       Sept 1, 2021
+# Date:       Sept 21, 2023
 # Class:      CS360
-# Assignment: 
-# Purpose:    
+# Assignment: Makefile Examples
+# Purpose:    demonstrate the components of a Makefile
 #############################################################################
 
-# Set some variable that make our life easier
+# Set some variables that make our life easier
+
+# Compiler
 CC=gcc
+
+# Flags for the compiler
 CFLAGS=-g -Wall
 
 # -g  include debug symbols in the executable so that the code can be
@@ -16,11 +20,14 @@ CFLAGS=-g -Wall
 #
 # -Wall	show many warnings from gcc
 
+# Options for VALGRIND
 # NOTE: the following line is broken across two lines
 # the slash (\) at the end is the continuation character
 # the slash must not be followed by any character except a newline!
 VALGRIND_FLAGS=-v --leak-check=yes --track-origins=yes --leak-check=full\
  --show-leak-kinds=all
+
+# Options for ENSCRIPT
 ENSCRIPT_FLAGS=-C -T 2 -p - -M Letter -Ec --color -fCourier8
 
 .PHONY: clean
