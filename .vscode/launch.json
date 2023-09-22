@@ -5,7 +5,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "(lldb) Launch", // Change name
+      "name": "(lldb) Launch main", // Change name
       "type": "lldb",
       "request": "launch",
       "program": "${workspaceFolder}/bin/main", // THIS IS IMPORTANT
@@ -13,16 +13,28 @@
       "cwd": "${workspaceFolder}",
       "preLaunchTask": "runMake", // THIS IS IMPORTANT
     },
+
     {
-      "name": "(lldb) Launch with args", // Change name
+      "name": "(lldb) Launch prime", // Change name
       "type": "lldb",
       "request": "launch",
-      "program": "${workspaceFolder}/bin/main", // THIS IS IMPORTANT
-      "args": ["64.59.225.81", "/chadd/cs360f21/LabHttp.html"], // add comma separated list of args here.
+      "program": "${workspaceFolder}/bin/prime", // THIS IS IMPORTANT
+      "args": [], // add comma separated list of args here.
       "cwd": "${workspaceFolder}",
       "preLaunchTask": "runMake", // THIS IS IMPORTANT
     },
-/*    {
+
+		{
+      "name": "(lldb) Launch printSomeStuff", // Change name
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/printSomeStuff", // THIS IS IMPORTANT
+      "args": [], // add comma separated list of args here.
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "runMake", // THIS IS IMPORTANT
+    },
+
+		/*    {
       "name": "(gdb) Launch with args", // Change name
       "type": "cppdbg",
       "request": "launch",
