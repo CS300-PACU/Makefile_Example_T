@@ -10,7 +10,7 @@
 # Set some variables that make our life easier
 
 # Compiler
-CC=gcc
+CC=clang
 
 # Flags for the compiler
 CFLAGS=-g -Wall

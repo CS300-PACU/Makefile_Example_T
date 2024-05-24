@@ -9,7 +9,7 @@
 
 # VARIABLES
 
-CC=gcc
+CC=clang
 
 CFLAGS=-g -Wall
 VALGRIND_FLAGS=-v --leak-check=yes --track-origins=yes --leak-check=full\
