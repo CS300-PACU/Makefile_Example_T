@@ -23,7 +23,7 @@ void printCapLetters()
 	char letter = 'A';
 	const char ALPHA_END = 'Z';
 
-	while ( ALPHA_END != letter)
+	while ( ALPHA_END >= letter)
 	{
 		printf("%c ", letter);
 		++letter;
@@ -45,7 +45,7 @@ void printLowerLetters()
 	char letter = 'a';
 	const char ALPHA_END = 'z';
 
-	while ( ALPHA_END != letter)
+	while ( ALPHA_END >= letter)
 	{
 		printf("%c ", letter);
 		++letter;
